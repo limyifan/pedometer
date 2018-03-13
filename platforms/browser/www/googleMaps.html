@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+    <head>
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+        <script src="js/googlemap.js"></script>
+
+        <script src="js/stopwatch.js"></script>
+    </head>
+    <body>
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=qnimate" id="_carbonads_js"></script>
+        <!-- This is needed to access the PhoneGap JavaScript -->
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+        <!-- Google Maps -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmkohSwurGGTGum4cxcwoStEbmKEGHzb0&libraries=places&callback=init"
+        async defer></script>
+        <div id="controlPanel">
+
+            <br><b>Destination:  </b>
+            <b>Please Enter The Place You Want To Go: </b>
+            <input id="destination" type="text" onclick="travelMode = 'WALKING';
+                calculateRoute()">
+            <button><i class="material-icons" onclick="travelMode = 'WALKING';
+                    calculateRoute()">Search</i></button>
+
+            <details><summary>Directions</summary></details>
+            <div id="directions"></div>
+            <div id="geolocationDetails"></div>
+
+            <div id="mapDiv"></div>
+        </div>
+
+        <div id="trace_open" onclick="trace()">
+            <a  class="menu_trigger">
+                <span class="title">Navigation</span>
+                          <span class="border border01"></span>
+                <span class="border border02"></span>
+            </a>
+        </div>
+
+    </body>
+</html>

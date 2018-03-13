@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HelloCordova</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin
+            xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-shake" version="0.6.0">
+        <name>Shake Gesture Detection</name>
+        <author>Lee Crossley (http://ilee.co.uk/)</author>
+        <description>Cordova Plugin to detect when a physical device performs a shake gesture.</description>
+        <keywords>cordova, shake, gesture, accelerometer, acceleration, detection</keywords>
+        <engines>
+            <engine name="cordova" version=">=3.0.0" />
+        </engines>
+        <platform name="amazon-fireos">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="android">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="blackberry10">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="browser">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="firefoxos">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="CDVShake">
+                    <param name="ios-package" value="CDVShake"/>
+                    <param name="onload" value="true"/>
+                </feature>
+            </config-file>
+            <js-module src="www/shakeNative.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <header-file src="src/ios/CDVShake.h" />
+            <source-file src="src/ios/CDVShake.m" />
+            <hook type="after_plugin_install" src="src/ios/hooks/patchMainViewController.js" />
+        </platform>
+        <platform name="ubuntu">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="windows">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="windows8">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="wp7">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+        <platform name="wp8">
+            <js-module src="www/shake.js" name="Shake">
+                <clobbers target="shake" />
+            </js-module>
+            <dependency id="cordova-plugin-device-motion" version=">=1.1.1" />
+        </platform>
+    </plugin>
+</widget>
